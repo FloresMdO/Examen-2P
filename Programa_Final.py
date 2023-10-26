@@ -27,7 +27,25 @@ def dibujar_triangulo(x, y, size):
     stdscr.refresh()
 
 # Loop principal
+def dibujar_circulo(radio, a, b, ancho, alto):
+    for i in range(alto):
+        for j in range(ancho):
+            distancia = math.sqrt((i - y) ** 2 + (j - x) ** 2)
+            if distancia <= radio + 0.5:
+                print("*", end="")
+            else:
+                print(" ", end="")
+        print()
+
+    radio = 5
+    ancho = 20
+    alto = 20
+    a = ancho // 2
+    b = alto // 2
+
+    
 while True:
+    dibujar_circulo(radio, a, b, ancho, alto)
     dibujar_triangulo(x, y, size)
     tecla = stdscr.getch()
 
