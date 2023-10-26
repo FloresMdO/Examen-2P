@@ -1,6 +1,6 @@
 import math
 import os
-"ian samuel lopez urrieta"
+#ian samuel lopez urrieta
 def clear_screen():
     # Esta función limpia la pantalla de la consola (solo funciona en sistemas compatibles)
     os.system('cls' if os.name == 'nt' else 'clear')
