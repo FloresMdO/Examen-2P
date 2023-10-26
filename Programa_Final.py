@@ -1,4 +1,5 @@
 import curses
+import math 
 
 # Inicializar la pantalla de curses
 stdscr = curses.initscr()
@@ -58,22 +59,23 @@ def dibujar_cuadrado(x, y, size):
 while True:
     print("Ingrese que figura desea usar:")
     figura = input("t = triangulo, c = cuadrado, cr = circulo").lower()
+    
     if figura == 't':
         print("Para terminar el prgrama escriba 'q'.")
         while True:
-        dibujar_triangulo(x, y, size)
-        tecla = stdscr.getch()
+            dibujar_triangulo(x, y, size)
+            tecla = stdscr.getch()
 
-        if tecla == ord('w') and y > 0:
-            y -= 1
-        elif tecla == ord('s') and y < curses.LINES - size:
-            y += 1
-        elif tecla == ord('a') and x > 0:
-            x -= 1
-        elif tecla == ord('d') and x < curses.COLS - size * 2:
-            x += 1
-        elif tecla == ord('q'):
-            break
+            if tecla == ord('w') and y > 0:
+                y -= 1
+            elif tecla == ord('s') and y < curses.LINES - size:
+                y += 1
+            elif tecla == ord('a') and x > 0:
+                x -= 1
+            elif tecla == ord('d') and x < curses.COLS - size * 2:
+                x += 1
+            elif tecla == ord('q'):
+                break
 
         # Restaurar la configuración de la terminal
         curses.endwin()
@@ -83,18 +85,18 @@ while True:
         print("Para terminar el prgrama escriba 'q'.")
         while True:
             dibujar_cuadrado(x, y, size)
-        tecla = stdscr.getch()
+            tecla = stdscr.getch()
 
-        if tecla == ord('w') and y > 0:
-        y -= 1
-        elif tecla == ord('s') and y < curses.LINES - size:
-            y += 1
-        elif tecla == ord('a') and x > 0:
-            x -= 1
-        elif tecla == ord('d') and x < curses.COLS - size * 2:
-            x += 1
-        elif tecla == ord('q'):
-            break
+            if tecla == ord('w') and y > 0:
+                y -= 1
+            elif tecla == ord('s') and y < curses.LINES - size:
+                y += 1
+            elif tecla == ord('a') and x > 0:
+                x -= 1
+            elif tecla == ord('d') and x < curses.COLS - size * 2:
+                x += 1
+            elif tecla == ord('q'):
+                break
 
         # Restaurar la configuración de la terminal
         curses.endwin()
@@ -104,21 +106,21 @@ while True:
         print("Para terminar el prgrama escriba 'q'.")
         while True:
             dibujar_circulo(radio, a, b, ancho, alto)
-        tecla = stdscr.getch()
+            tecla = stdscr.getch()
 
-        if tecla == ord('w') and y > 0:
-        y -= 1
-        elif tecla == ord('s') and y < curses.LINES - size:
-            y += 1
-        elif tecla == ord('a') and x > 0:
-            x -= 1
-        elif tecla == ord('d') and x < curses.COLS - size * 2:
-            x += 1
-        elif tecla == ord('q'):
-            break
+            if tecla == ord('w') and y > 0:
+                y -= 1
+            elif tecla == ord('s') and y < curses.LINES - size:
+                y += 1
+            elif tecla == ord('a') and x > 0:
+                x -= 1
+            elif tecla == ord('d') and x < curses.COLS - size * 2:
+                x += 1
+            elif tecla == ord('q'):
+                break
 
         # Restaurar la configuración de la terminal
         curses.endwin()
         break
     else:
-    print("Esa opción no es valida, intenta con otra")
+        print("Esa opción no es valida, intenta con otra")
